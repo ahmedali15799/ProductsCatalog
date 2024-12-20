@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Products Catalog @ViewData["Tittle"] Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/productIn.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/">Product Catalog</a>
+            </div>
+
+
+            <div class="nav-links">
+                <a asp-action="Index" asp-route-id="1" class="nav-link text-light ">Electronics</a>
+            </div>
+
+            <div class="nav-links">
+                <a asp-action="Index" asp-route-id="2" class="nav-link text-light ">Phones</a>
+            </div>
+
+            <div class="nav-links">
+                <a asp-action="Index" asp-route-id="3" class="nav-link text-light ">Home</a>
+            </div>
+
+            <div class="nav-links">
+                <a asp-action="Index" asp-route-id="4" class="nav-link text-light ">Kitchen</a>
+            </div>
+
+            <div class="nav-links">
+                <a asp-action="Index" asp-route-id="5" class="nav-link text-light ">Cloths</a>
+            </div>
+
+            <div class="nav-links">
+                <a asp-action="Index" asp-route-id="6" class="nav-link text-light ">Sports</a>
+            </div>
+
+            <div class="nav-links">
+                <a asp-action="Index" asp-route-id="7" class="nav-link text-light ">Books</a>
+            </div>
+
+            <div class="nav-links">
+                <a asp-action="Index" asp-route-id="8" class="nav-link text-light ">VideoGames</a>
+            </div>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="nav-item">
+                    <a class="nav-link text-light btn btn-info" asp-area="" asp-controller="User" asp-action="Index">Users</a>
+                </div>
+
+                <div class="nav-item">
+                    <a class="nav-link text-light btn btn-info" asp-area="" asp-controller="Role" asp-action="Index">Roles</a>
+            </div>
+            }
+
+            
+            <div class="nav-item">
+                    <a class="nav-link text-light ">@User.Identity.Name</a>
+            </div>
+            
+
+            
+                <div class="nav-item">
+                    <a class="nav-link text-light btn btn-danger float-left" asp-area="" asp-controller="Account" asp-action="SignOut">Sign Out</a>
+            </div>
+            
+
+            
+            
+            
+            
+        </nav>
+    </header>
+
+    @RenderBody();
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("ValidationScriptSection", required: false)
+</body>
+</html>

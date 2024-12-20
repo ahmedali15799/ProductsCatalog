@@ -1,0 +1,32 @@
+﻿@model ProductViewModel
+
+@{
+    Layout = "~/Views/Shared/_INDPRO.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<br />
+
+<div class="details">
+    
+    <div class="product-image">
+        <div>
+            <img src="~/Files//Images/@Model.ImageName" />
+        </div>
+    </div>
+
+    
+    <div class="product-info">
+        <h1 class="product-name">@Model.Name</h1>
+        <p class="product-description">This Product meet all of your needs</p>
+
+        
+        <div class="product-price">
+            <p><strong>Price:</strong> @Model.Price.ToString("c")</p>
+        </div>
+
+        <a asp-action="Index" class="btn btn-light">Back to list</a>
+
+    </div>
+</div>

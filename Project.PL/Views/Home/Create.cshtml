@@ -1,0 +1,22 @@
+﻿@model ProductViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_INDPRO.cshtml";
+}
+
+<h1>create Page</h1>
+<br />
+<br />
+<form asp-controller="Home" asp-action="Create" enctype="multipart/form-data">
+    <partial name="HomePartialView/CreateEditPrtialView" />
+
+    <input type="submit" value="Create" class="btn btn-primary" />
+    <a asp-controller="Home" asp-action="Index" class="btn btn-light">Back To List</a>
+
+</form>
+
+@section ValidationScriptSection {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
